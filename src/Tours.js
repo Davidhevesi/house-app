@@ -1,10 +1,18 @@
 import React from 'react'
+import Tour from './Tour'
 
-const Tours = () => {
+const Tours = ({ tours }) => {
   return (
-    <div>
-      <h2 className="text-2xl font-bold">Tours Component</h2>
-    </div>
+    <section>
+      <div className="">
+        <h2>Our Tours</h2>
+      </div>
+      <div>
+        {tours.map((tour) => {
+          return <Tour key={tour.id} {...tour}></Tour>
+        })}
+      </div>
+    </section>
   )
 }
 

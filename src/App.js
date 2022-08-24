@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+
 import Loading from './Loading'
 import Tours from './Tours'
 const url = 'https://course-api.com/react-tours-project'
@@ -31,7 +31,9 @@ function App() {
   }
   return (
     <main>
-      <Tours tours={tours} />
+      <div>
+        <Tours tours={tours} />
+      </div>
     </main>
   )
 }

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const Tour = ({ id, image, info, price, name }) => {
-  const [readMore, setReadMore] = useState(false)
+const Tour = ({ id, image, info, price, name, removeTour }) => {
+  const [readMore, setReadMore] = useState(false);
   return (
     <div className="bg-amber-500 mb-4 rounded-lg overflow-hidden shadow-2xl">
       <img src={image} alt={name} />
@@ -18,15 +18,18 @@ const Tour = ({ id, image, info, price, name }) => {
             className="text-amber-900 ml-2"
             onClick={() => setReadMore(!readMore)}
           >
-            {readMore ? 'show less' : 'read more'}
+            {readMore ? "show less" : "read more"}
           </button>
         </p>
-        <button className="text-white bg-amber-400 px-4 py-2 rounded-lg">
+        <button
+          className="text-white bg-amber-400 px-4 py-2 rounded-lg"
+          onClick={() => removeTour(id)}
+        >
           Not Interestes
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Tour
+export default Tour;

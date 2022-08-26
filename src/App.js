@@ -24,13 +24,13 @@ function App() {
   }, [])
   if (loading) {
     return (
-      <main>
+      <main className="flex justify-center">
         <Loading />
       </main>
     )
   }
   return (
-    <main>
+    <main className="container mx-auto max-w-md">
       <div>
         <Tours tours={tours} />
       </div>
